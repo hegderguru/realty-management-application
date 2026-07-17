@@ -1,1 +1,9 @@
+com/karur/realty_management_application/config/auto/database/DatabaseProperties$PackageNameProperties.class
 com/karur/realty_management_application/RealtyManagementApplication.class
+com/karur/realty_management_application/config/auto/database/DatabaseProperties.class
+com/karur/realty_management_application/config/auto/database/DatabaseProperties$JpaProperties.class
+com/karur/realty_management_application/config/auto/database/DatabaseProperties$PostgresDataSourceProperties.class
+com/karur/realty_management_application/config/auto/database/DatabaseProperties$HibernateProperties.class
+com/karur/realty_management_application/config/auto/database/DatabaseProperties$Properties.class
+com/karur/realty_management_application/config/auto/database/DatabaseConfig.class
+com/karur/realty_management_application/config/auto/database/DatabaseProperties$HikariProperties.class
