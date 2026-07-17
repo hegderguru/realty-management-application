@@ -29,21 +29,20 @@ public class DatabaseConfig {
     @Autowired
     private ConfigurableListableBeanFactory configurableListableBeanFactory;
 
-    private Map<String, DataSource> datasources;
-    private Map<String, NamedParameterJdbcTemplate> namedParameterJdbcTemplates;
-    private Map<String, EntityManagerFactory> entityManagerFactories;
-    private Map<String, PlatformTransactionManager> platformTransactionManagers;
+    private Map<String, DataSource> datasources = new HashMap<>();
+    private Map<String, NamedParameterJdbcTemplate> namedParameterJdbcTemplates = new HashMap<>();
+    private Map<String, EntityManagerFactory> entityManagerFactories = new HashMap<>();
+    private Map<String, PlatformTransactionManager> platformTransactionManagers = new HashMap<>();
 
     @PostConstruct
     public void setup() {
-        datasources = datasources();
-        namedParameterJdbcTemplates = namedParameterJdbcTemplates(datasources);
-        entityManagerFactories = entityManagerFactories(datasources);
-        platformTransactionManagers = platformTransactionManagers(entityManagerFactories);
+        datasources();
+        namedParameterJdbcTemplates(datasources);
+        entityManagerFactories(datasources);
+        platformTransactionManagers(entityManagerFactories);
     }
 
-    private Map<String, DataSource> datasources() {
-        Map<String, DataSource> dataSources = new HashMap<>();
+    private void datasources() {
         databaseProperties.getPostgres()
                 .forEach((key, config) -> {
                     HikariConfig hikariConfig = new HikariConfig();
@@ -52,34 +51,20 @@ public class DatabaseConfig {
                     hikariConfig.setPassword(config.getPassword());
                     hikariConfig.setDriverClassName(config.getDriverClassName());
                     hikariConfig.setSchema(config.getSchema());
-                    applyDefault(hikariConfig, config.getHikari());
                     datasources.put(config.getPackageNames().getDatasource(), new HikariDataSource(hikariConfig));
                 });
         datasources.forEach((key, dataSource) -> configurableListableBeanFactory.registerSingleton(key, dataSource));
-        return datasources;
     }
 
-    private void applyDefault(HikariConfig hikariConfig, DatabaseProperties.HikariProperties hikari) {
-        hikariConfig.setConnectionTimeout(hikariConfig.getConnectionTimeout());
-        hikariConfig.setIdleTimeout(hikariConfig.getIdleTimeout());
-        hikariConfig.setMaxLifetime(hikariConfig.getMaxLifetime());
-        hikariConfig.setMinimumIdle(hikariConfig.getMinimumIdle());
-        hikariConfig.setLeakDetectionThreshold(hikariConfig.getLeakDetectionThreshold());
-        hikariConfig.setMaximumPoolSize(hikariConfig.getMaximumPoolSize());
-        hikariConfig.setConnectionTestQuery(hikariConfig.getConnectionTestQuery());
-    }
-
-    private Map<String, NamedParameterJdbcTemplate> namedParameterJdbcTemplates(Map<String, DataSource> datasources) {
-        Map<String, NamedParameterJdbcTemplate> namedParameterJdbcTemplates = new HashMap<>();
+    private void namedParameterJdbcTemplates(Map<String, DataSource> datasources) {
         databaseProperties.getPostgres().forEach((key, config) -> {
             DataSource dataSource = datasources.get(config.getPackageNames().getDatasource());
             namedParameterJdbcTemplates.put(config.getPackageNames().getNamedParameterJdbcTemplate(), new NamedParameterJdbcTemplate(dataSource));
         });
         namedParameterJdbcTemplates.forEach((key, namedParameterJdbcTemplate) -> configurableListableBeanFactory.registerSingleton(key, namedParameterJdbcTemplate));
-        return namedParameterJdbcTemplates;
     }
 
-    public Map<String, EntityManagerFactory> entityManagerFactories(Map<String, DataSource> datasources) {
+    public void entityManagerFactories(Map<String, DataSource> datasources) {
         databaseProperties.getPostgres().forEach((key, config) -> {
             DataSource dataSource = datasources.get(config.getPackageNames().getDatasource());
             Properties properties = new Properties();
@@ -94,16 +79,13 @@ public class DatabaseConfig {
             entityManagerFactories.put(config.getPackageNames().getContainerEntityManagerFactory(), managerFactoryBean.getObject());
         });
         entityManagerFactories.forEach((key, entityManagerFactory) -> configurableListableBeanFactory.registerSingleton(key, entityManagerFactory));
-        return entityManagerFactories;
     }
 
-    public Map<String, PlatformTransactionManager> platformTransactionManagers(Map<String, EntityManagerFactory> entityManagerFactories) {
-        Map<String, PlatformTransactionManager> platformTransactionManagers = new HashMap<>();
+    public void platformTransactionManagers(Map<String, EntityManagerFactory> entityManagerFactories) {
         databaseProperties.getPostgres().forEach((key, config) -> {
-            EntityManagerFactory entityManagerFactory = entityManagerFactories.get(config.getPackageNames().getPlatformTransactionManager());
+            EntityManagerFactory entityManagerFactory = entityManagerFactories.get(config.getPackageNames().getContainerEntityManagerFactory());
             platformTransactionManagers.put(config.getPackageNames().getPlatformTransactionManager(), new JpaTransactionManager(entityManagerFactory));
         });
         platformTransactionManagers.forEach((key, platformTransactionManager) -> configurableListableBeanFactory.registerSingleton(key, platformTransactionManager));
-        return platformTransactionManagers;
     }
 }

@@ -19,8 +19,8 @@ database:
         namedParameterJdbcTemplate: realtyNamedParameterJdbcTemplate
         containerEntityManagerFactory: realtyContainerEntityManagerFactory
         platformTransactionManager: realtyPlatformTransactionManager
-        entity:
-        repository:
+        entity: com.karur.realty_management_application.entity
+        repository: com.karur.realty_management_application.repository
       jdbc-url: jdbc:postgresql://localhost:5432/access
       username: postgres
       password: postgres
@@ -39,8 +39,8 @@ database:
         namedParameterJdbcTemplate: realtyAccessNamedParameterJdbcTemplate
         containerEntityManagerFactory: realtyAccessContainerEntityManagerFactory
         platformTransactionManager: realtyAccessPlatformTransactionManager
-        entity:
-        repository:
+        entity: com.karur.realty_management_application.entity
+        repository: com.karur.realty_management_application.repository
       jdbc-url: jdbc:postgresql://localhost:5432/access
       username: postgres
       password: postgres
