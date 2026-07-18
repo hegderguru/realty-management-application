@@ -2,10 +2,15 @@ package com.karur.realty_management_application.entity.party;
 
 import com.karur.realty_management_application.entity.address.AddressEntity;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "party")
 @Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "party_type", discriminatorType = DiscriminatorType.STRING)
 public abstract class Party {
 
     @Id
@@ -16,7 +21,7 @@ public abstract class Party {
     private String name;
     private String description;
 
-    @OneToOne(cascade = CascadeType.DETACH)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private AddressEntity presentAddressEntity;
 }

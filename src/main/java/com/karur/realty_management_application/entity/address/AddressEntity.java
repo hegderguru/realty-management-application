@@ -1,7 +1,11 @@
 package com.karur.realty_management_application.entity.address;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "address")
 public class AddressEntity {

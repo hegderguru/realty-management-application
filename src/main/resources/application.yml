@@ -19,8 +19,8 @@ database:
         namedParameterJdbcTemplate: assetNamedParameterJdbcTemplate
         containerEntityManagerFactory: assetContainerEntityManagerFactory
         platformTransactionManager: assetPlatformTransactionManager
-        entity: com.karur.asset_management_application.entity
-        repository: com.karur.asset_management_application.repository
+        entity: com.karur.realty_management_application.entity
+        repository: com.karur.realty_management_application.repository
       jdbc-url: jdbc:postgresql://localhost:5432/asset
       username: postgres
       password: postgres

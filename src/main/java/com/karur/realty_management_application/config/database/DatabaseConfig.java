@@ -9,7 +9,7 @@ public class DatabaseConfig {
 
     @Configuration
     @EnableJpaRepositories(
-            basePackages = "com.karur.asset_management_application.repository",
+            basePackages = "com.karur.realty_management_application.repository",
             entityManagerFactoryRef = "assetContainerEntityManagerFactory",
             transactionManagerRef = "assetPlatformTransactionManager"
     )
