@@ -78,6 +78,7 @@ public class DatabaseAutoConfig {
             // 3. LocalContainerEntityManagerFactoryBean with explicit connection properties for logs
             BeanDefinitionBuilder beanDefinitionBuilder3 = BeanDefinitionBuilder.rootBeanDefinition(LocalContainerEntityManagerFactoryBean.class);
             Properties jpaProperties = new Properties();
+            jpaProperties.put("hibernate.default_schema",config.getSchema());
             jpaProperties.put("hibernate.dialect", config.getJpa().getProperties().getHibernate().getDialect());
             jpaProperties.put("hibernate.format_sql", config.getJpa().getProperties().getHibernate().getFormat_sql());
             jpaProperties.put("hibernate.show_sql", config.getJpa().getShowSql());
