@@ -13,7 +13,5 @@ public class DatabaseConfig {
             entityManagerFactoryRef = "assetContainerEntityManagerFactory",
             transactionManagerRef = "assetPlatformTransactionManager"
     )
-    public static class AssetDatabaseConfig{
-
-    }
+    public static class AssetDatabaseConfig{}
 }
