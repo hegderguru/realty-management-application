@@ -24,7 +24,7 @@ public class AddressEntity {
     private String state;
     private String country;
     private String zipCode;
-    private String phone;
     private Long latitude;
     private Long longitude;
+    private String phone;
 }

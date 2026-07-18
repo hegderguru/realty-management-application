@@ -34,4 +34,4 @@ database:
           hibernate:
             ddl-auto: update
             dialect: org.hibernate.dialect.PostgreSQLDialect
-            format_sql: true;
+            format_sql: true
