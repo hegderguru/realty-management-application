@@ -83,7 +83,7 @@ public class DatabaseAutoConfig {
             jpaProperties.put("hibernate.format_sql", config.getJpa().getProperties().getHibernate().getFormat_sql());
             jpaProperties.put("hibernate.show_sql", config.getJpa().getShowSql());
             jpaProperties.put("hibernate.hbm2ddl.auto", config.getJpa().getProperties().getHibernate().getDdlAuto());
-
+            jpaProperties.put("hibernate.physical_naming_strategy", "org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy");
 // ADD THESE: Explicitly pass configuration values to satisfy Hibernate's telemetry logger
             jpaProperties.put("hibernate.connection.url", config.getJdbcUrl());
             jpaProperties.put("hibernate.connection.username", config.getUsername());
