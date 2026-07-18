@@ -1,0 +1,40 @@
+# Maven build output
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+pom.xml.note
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Keep the Maven Wrapper files but exclude the binary jar if preferred
+# (Optional: Uncomment the next line if you want to exclude the wrapper jar)
+# .mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse / Spring Tool Suite (STS)
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# Visual Studio Code
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
