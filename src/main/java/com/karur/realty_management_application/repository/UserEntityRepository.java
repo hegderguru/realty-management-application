@@ -1,6 +1,6 @@
 package com.karur.realty_management_application.repository;
 
-import com.karur.realty_management_application.entity.party.user.UserEntity;
+import com.karur.realty_management_application.entity.party.user.OrganisationUserEntity;
 import com.karur.realty_management_application.repository.inter.ISiteRealtyAssetEntityRepository;
 import com.karur.realty_management_application.repository.inter.IUserEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,27 +18,27 @@ public class UserEntityRepository {
     @Autowired
     private ISiteRealtyAssetEntityRepository iSiteRealtyAssetEntityRepository;
 
-    public Optional<UserEntity> fetchByUserEntityName(String username) {
+    public Optional<OrganisationUserEntity> fetchByUserEntityName(String username) {
         return iUserEntityRepository.findByUsername(username);
     }
 
-    public Optional<UserEntity> fetchByUserEntityId(Long id) {
+    public Optional<OrganisationUserEntity> fetchByUserEntityId(Long id) {
         return iUserEntityRepository.findById(id);
     }
 
-    public Optional<List<UserEntity>> fetchUserEntitiesForOrganisationId(Long id) {
+    public Optional<List<OrganisationUserEntity>> fetchUserEntitiesForOrganisationId(Long id) {
         return iUserEntityRepository.findByOrganisationEntityId(id);
     }
 
-    public Optional<List<UserEntity>> fetchUserEntitiesForOrganisationNumber(String number) {
+    public Optional<List<OrganisationUserEntity>> fetchUserEntitiesForOrganisationNumber(String number) {
         return iUserEntityRepository.findByOrganisationEntityNumber(number);
     }
 
-    public Optional<List<UserEntity>> fetchUserEntitiesForOrganisationNabe(String name) {
+    public Optional<List<OrganisationUserEntity>> fetchUserEntitiesForOrganisationNabe(String name) {
         return iUserEntityRepository.findByOrganisationEntityName(name);
     }
 
-    public Optional<UserEntity> fetchUserEntityBySiteAssetRealtyBelongsToId(Long id) {
+    public Optional<OrganisationUserEntity> fetchUserEntityBySiteAssetRealtyBelongsToId(Long id) {
         return iSiteRealtyAssetEntityRepository.findUserEntityByBelongsToId(id);
     }
 
