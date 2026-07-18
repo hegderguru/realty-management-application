@@ -8,7 +8,7 @@ public class AddressEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "addressEntitySequence")
-    @SequenceGenerator(name = "addressEntitySequence", sequenceName = "seq_address_asset_d",initialValue = 1,allocationSize = 1,schema = "realty")
+    @SequenceGenerator(name = "addressEntitySequence", sequenceName = "seq_address_asset_d",initialValue = 1,allocationSize = 1)
     private Long id;
 
     private String number;
@@ -20,5 +20,5 @@ public class AddressEntity {
     private String state;
     private String country;
     private String zipCode;
-
+    private String phone;
 }

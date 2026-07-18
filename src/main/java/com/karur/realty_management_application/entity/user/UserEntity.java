@@ -1,23 +1,20 @@
 package com.karur.realty_management_application.entity.user;
 
-import com.karur.realty_management_application.entity.Party;
+import com.karur.realty_management_application.entity.party.Party;
 import com.karur.realty_management_application.entity.address.AddressEntity;
 import com.karur.realty_management_application.entity.organisation.OrganisationEntity;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "access")
-public class UserEntity implements Party {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "accessEntitySequence")
-    @SequenceGenerator(name = "accessEntitySequence", sequenceName = "seq_access_d",initialValue = 1,allocationSize = 1,schema = "realty")
-    private Long id;
+public class UserEntity extends Party {
 
     private String username;
-
-    private AddressEntity presentAddressEntity;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String email;
+    private String phone;
     private AddressEntity homeAddressEntity;
-
     private OrganisationEntity organisationEntity;
 }
