@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "user")
+@Table(name = "user_details")
 @DiscriminatorValue("USER")
 public class UserEntity extends Party {
 
