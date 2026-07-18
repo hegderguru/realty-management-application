@@ -1,8 +1,6 @@
-package com.karur.realty_management_application.entity.party.user;
+package com.karur.realty_management_application.entity.party;
 
-import com.karur.realty_management_application.entity.party.Party;
 import com.karur.realty_management_application.entity.address.AddressEntity;
-import com.karur.realty_management_application.entity.party.organisation.OrganisationEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

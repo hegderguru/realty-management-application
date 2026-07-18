@@ -1,6 +1,6 @@
 package com.karur.realty_management_application.repository;
 
-import com.karur.realty_management_application.entity.party.organisation.OrganisationEntity;
+import com.karur.realty_management_application.entity.party.OrganisationEntity;
 import com.karur.realty_management_application.repository.inter.IOrganisationEntityRepository;
 import com.karur.realty_management_application.repository.inter.ISiteRealtyAssetEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;

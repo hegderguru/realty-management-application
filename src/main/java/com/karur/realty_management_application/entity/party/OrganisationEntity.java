@@ -1,11 +1,8 @@
-package com.karur.realty_management_application.entity.party.organisation;
+package com.karur.realty_management_application.entity.party;
 
-import com.karur.realty_management_application.entity.party.Party;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter
 @Setter

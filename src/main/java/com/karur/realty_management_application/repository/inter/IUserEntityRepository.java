@@ -1,6 +1,6 @@
 package com.karur.realty_management_application.repository.inter;
 
-import com.karur.realty_management_application.entity.party.user.OrganisationUserEntity;
+import com.karur.realty_management_application.entity.party.OrganisationUserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
