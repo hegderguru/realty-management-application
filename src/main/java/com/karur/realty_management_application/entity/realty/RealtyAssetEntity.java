@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "realty_asset", schema = "asset")
+@Table(name = "realty_asset")
 public abstract class RealtyAssetEntity extends AssetEntity {
 
     private Long latitude;

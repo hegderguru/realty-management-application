@@ -6,13 +6,13 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "asset", schema = "asset")
+@Table(name = "asset")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class AssetEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "assetEntitySequence")
-    @SequenceGenerator(name = "assetEntitySequence", sequenceName = "seq_asset_id", initialValue = 1, allocationSize = 1, schema = "asset")
+    @SequenceGenerator(name = "assetEntitySequence", sequenceName = "seq_asset_id", initialValue = 1, allocationSize = 1)
     private Long id;
 
     private String number;

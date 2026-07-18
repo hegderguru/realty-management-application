@@ -10,7 +10,7 @@ public abstract class Party {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "partyEntitySequence")
-    @SequenceGenerator(name = "partyEntitySequence", sequenceName = "seq_party_d",initialValue = 1,allocationSize = 1,schema = "asset")
+    @SequenceGenerator(name = "partyEntitySequence", sequenceName = "seq_party_d",initialValue = 1,allocationSize = 1)
     private Long id;
 
     private String name;

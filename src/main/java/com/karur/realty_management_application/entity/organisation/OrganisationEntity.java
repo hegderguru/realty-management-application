@@ -9,6 +9,7 @@ import java.util.List;
 @Table(name = "organisation")
 public class OrganisationEntity extends Party {
     private String number;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "parent_organisation_id")
     private List<OrganisationEntity> parentOrganisation;
