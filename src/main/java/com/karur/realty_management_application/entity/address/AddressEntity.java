@@ -3,7 +3,7 @@ package com.karur.realty_management_application.entity.address;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "address")
+@Table(name = "address",schema = "address")
 public class AddressEntity {
 
     @Id
@@ -21,4 +21,6 @@ public class AddressEntity {
     private String country;
     private String zipCode;
     private String phone;
+    private Long latitude;
+    private Long longitude;
 }

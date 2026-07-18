@@ -1,16 +1,12 @@
-package com.karur.realty_management_application.entity.realty;
+package com.karur.realty_management_application.entity.asset.realty;
 
 import com.karur.realty_management_application.entity.address.AddressEntity;
+import com.karur.realty_management_application.entity.asset.AssetEntity;
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
-
 @Entity
-@Table(name = "realty_asset")
+@Table(name = "realty_asset",schema = "asset")
 public abstract class RealtyAssetEntity extends AssetEntity {
-
-    private Long latitude;
-    private Long longitude;
 
     private Integer nELength;
     private Integer eSLength;

@@ -21,7 +21,7 @@ database:
         platformTransactionManager: realtyPlatformTransactionManager
         entity: com.karur.realty_management_application.entity
         repository: com.karur.realty_management_application.repository
-      jdbc-url: jdbc:postgresql://localhost:5432/access
+      jdbc-url: jdbc:postgresql://localhost:5432/asset
       username: postgres
       password: postgres
       driver-class-name: org.postgresql.Driver

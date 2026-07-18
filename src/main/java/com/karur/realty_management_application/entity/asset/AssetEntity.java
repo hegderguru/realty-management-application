@@ -1,4 +1,4 @@
-package com.karur.realty_management_application.entity.realty;
+package com.karur.realty_management_application.entity.asset;
 
 import com.karur.realty_management_application.entity.party.Party;
 import jakarta.persistence.*;
@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "asset")
+@Table(name = "asset",schema = "asset")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class AssetEntity {
 
