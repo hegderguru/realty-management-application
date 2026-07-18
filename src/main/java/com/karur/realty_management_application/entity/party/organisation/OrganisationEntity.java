@@ -6,11 +6,11 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "organisation",schema = "party")
+@Table(name = "organisation")
 public class OrganisationEntity extends Party {
     private String number;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.DETACH)
     @JoinColumn(name = "parent_organisation_id")
     private OrganisationEntity parentOrganisation;
     

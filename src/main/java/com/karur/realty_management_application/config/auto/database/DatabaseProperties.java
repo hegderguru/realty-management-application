@@ -21,7 +21,7 @@ public class DatabaseProperties {
     private Map<String, PostgresDataSourceProperties> postgres = new HashMap<>();
 
     @PostConstruct
-    public void init(){
+    public void init() {
         postgres.values().forEach(postgresDataSourceProperties -> applyDefault(postgresDataSourceProperties.getHikari()));
     }
 
@@ -64,6 +64,7 @@ public class DatabaseProperties {
 
     @Data
     public static class JpaProperties {
+        private String showSql;
         private Properties properties = new Properties();
     }
 
@@ -74,7 +75,9 @@ public class DatabaseProperties {
 
     @Data
     public static class HibernateProperties {
+        private String ddlAuto;
         private String dialect;
+        private String format_sql;
     }
 
     @Data

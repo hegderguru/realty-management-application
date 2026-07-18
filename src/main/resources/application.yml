@@ -1,6 +1,6 @@
 spring:
   application:
-    name: realty-management-application
+    name: asset-management-application
 
 
 database:
@@ -12,15 +12,15 @@ database:
     max-lifetime: 60000
     leak-detection-threshold: 2000
   postgres:
-    realty:
-      schema: auth
+    asset:
+      schema: asset
       package-names:
-        datasource: realtyDatasource
-        namedParameterJdbcTemplate: realtyNamedParameterJdbcTemplate
-        containerEntityManagerFactory: realtyContainerEntityManagerFactory
-        platformTransactionManager: realtyPlatformTransactionManager
-        entity: com.karur.realty_management_application.entity
-        repository: com.karur.realty_management_application.repository
+        datasource: assetDatasource
+        namedParameterJdbcTemplate: assetNamedParameterJdbcTemplate
+        containerEntityManagerFactory: assetContainerEntityManagerFactory
+        platformTransactionManager: assetPlatformTransactionManager
+        entity: com.karur.asset_management_application.entity
+        repository: com.karur.asset_management_application.repository
       jdbc-url: jdbc:postgresql://localhost:5432/asset
       username: postgres
       password: postgres
@@ -29,26 +29,9 @@ database:
         schema: auth
         connection-test-query: SELECT 1
       jpa:
+        show-sql : true
         properties:
           hibernate:
+            ddl-auto: create
             dialect: org.hibernate.dialect.PostgreSQLDialect
-    realtyAccess:
-      schema: auth
-      package-names:
-        datasource: realtyAccessDatasource
-        namedParameterJdbcTemplate: realtyAccessNamedParameterJdbcTemplate
-        containerEntityManagerFactory: realtyAccessContainerEntityManagerFactory
-        platformTransactionManager: realtyAccessPlatformTransactionManager
-        entity: com.karur.realty_management_application.entity
-        repository: com.karur.realty_management_application.repository
-      jdbc-url: jdbc:postgresql://localhost:5432/access
-      username: postgres
-      password: postgres
-      driver-class-name: org.postgresql.Driver
-      hikari:
-        schema: auth
-        connection-test-query: SELECT 1
-      jpa:
-        properties:
-          hibernate:
-            dialect: org.hibernate.dialect.PostgreSQLDialect
+            format_sql: true;

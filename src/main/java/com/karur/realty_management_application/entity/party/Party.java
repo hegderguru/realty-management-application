@@ -4,7 +4,7 @@ import com.karur.realty_management_application.entity.address.AddressEntity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "party",schema = "party")
+@Table(name = "party")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Party {
 

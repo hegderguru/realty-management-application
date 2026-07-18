@@ -5,7 +5,7 @@ import com.karur.realty_management_application.entity.asset.AssetEntity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "realty_asset",schema = "asset")
+@Table(name = "realty_asset")
 public abstract class RealtyAssetEntity extends AssetEntity {
 
     private Integer nELength;

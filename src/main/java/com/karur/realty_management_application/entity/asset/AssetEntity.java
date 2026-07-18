@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "asset",schema = "asset")
+@Table(name = "asset")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class AssetEntity {
 
