@@ -6,7 +6,7 @@ import com.karur.realty_management_application.entity.organisation.OrganisationE
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "access")
+@Table(name = "user")
 public class UserEntity extends Party {
 
     private String username;
