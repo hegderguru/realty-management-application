@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("asset/orgUser")
-public class OrgUserController {
+@RequestMapping("asset")
+public class AssetController {
 
     @Autowired
     OrgUserService orgUserService;
 
-    @GetMapping("{username}")
+    @GetMapping("orgUser/{username}")
     public Mono<ResponseEntity<AssetResponse>> fetchOrgUserByName(@PathVariable Mono<String> usernameMono){
        return usernameMono.flatMap(username -> orgUserService.fetchUserDetailByUsername(username))
                .map(userDetail -> ResponseEntity.ok(AssetResponse.SuccessResponse.builder()

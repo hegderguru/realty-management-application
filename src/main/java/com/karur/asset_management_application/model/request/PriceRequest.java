@@ -1,9 +1,9 @@
-package com.karur.asset_management_application.model.read;
+package com.karur.asset_management_application.model.request;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Embedded;
 
-public class Price {
+public class PriceRequest {
     private String priceMeasurementUnit;
     @Embedded
     private PricePerUnit pricePerUnit;
