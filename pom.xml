@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.karur</groupId>
-	<artifactId>realty-management-application</artifactId>
+	<artifactId>asset-management-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
