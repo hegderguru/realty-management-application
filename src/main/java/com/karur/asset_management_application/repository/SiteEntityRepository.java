@@ -14,6 +14,10 @@ public class SiteEntityRepository {
     ISiteEntityRepository iSiteEntityRepository;
 
     public SiteEntity fetchById(Long id) {
-        return iSiteEntityRepository.findById(id).orElseThrow(()->new IllegalArgumentException("site not found"));
+        return iSiteEntityRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("site not found"));
+    }
+
+    public SiteEntity fetchByNumber(String number) {
+        return iSiteEntityRepository.findByNumber(number).orElseThrow(() -> new IllegalArgumentException("site not found"));
     }
 }

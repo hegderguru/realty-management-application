@@ -19,12 +19,12 @@ public class OrganisationEntityRepository {
     @Autowired
     ISiteEntityRepository iSiteEntityRepository;
 
-    public Optional<OrganisationEntity> fetchOrganisationEntityById(Long id) {
-        return iOrganisationEntityRepository.findById(id);
+    public OrganisationEntity fetchById(Long id) {
+        return iOrganisationEntityRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Organisation not found"));
     }
 
-    public Optional<OrganisationEntity> fetchOrganisationEntityByNumber(String name) {
-        return iOrganisationEntityRepository.findByNumber(name);
+    public OrganisationEntity fetchByNumber(String name) {
+        return iOrganisationEntityRepository.findByNumber(name).orElseThrow(() -> new IllegalArgumentException("Organisation not found"));
     }
 
     public Optional<OrganisationEntity> fetchOrganisationEntityByName(String name) {

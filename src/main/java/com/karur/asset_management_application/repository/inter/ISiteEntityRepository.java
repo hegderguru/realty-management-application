@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface ISiteEntityRepository extends JpaRepository<SiteEntity,Long> {
+    Optional<OrganisationEntity> findByNumber(String number);
     Optional<OrganisationUserEntity> findUserEntityByBelongsToId(Long id);
     Optional<OrganisationEntity> findOrganisationEntityByBelongsToId(Long id);
     Optional<OrganisationEntity> findOrganisationEntityByParentSiteEntityId(Long id);

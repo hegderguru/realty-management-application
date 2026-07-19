@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface IUserEntityRepository extends JpaRepository<OrganisationUserEntity,Long> {
+public interface IOrganisationUserEntityRepository extends JpaRepository<OrganisationUserEntity,Long> {
     Optional<OrganisationUserEntity> findByUsername(String username);
-    Optional<List<OrganisationUserEntity>> findByOrganisationEntityId(Long organisationId);
-    Optional<List<OrganisationUserEntity>> findByOrganisationEntityNumber(String number);
-    Optional<List<OrganisationUserEntity>> findByOrganisationEntityName(String name);
+    Optional<List<OrganisationUserEntity>> findAllByOrganisationEntityId(Long organisationId);
+    Optional<List<OrganisationUserEntity>> findAllByOrganisationEntityNumber(String number);
+    Optional<List<OrganisationUserEntity>> findAllByOrganisationEntityName(String name);
 }
