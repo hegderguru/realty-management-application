@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.karur.realty-management-application' is invalid and this project uses 'com.karur.realty_management_application' instead.
+* The original package name 'com.karur.realty-management-application' is invalid and this project uses 'com.karur.asset_management_application' instead.
 
 # Getting Started
 
