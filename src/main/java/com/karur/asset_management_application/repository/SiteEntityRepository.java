@@ -13,7 +13,7 @@ public class SiteEntityRepository {
     @Autowired
     ISiteEntityRepository iSiteEntityRepository;
 
-    public Optional<SiteEntity> fetchBySiteRealtyAssetEntityId(Long id) {
-        return iSiteEntityRepository.findById(id);
+    public SiteEntity fetchById(Long id) {
+        return iSiteEntityRepository.findById(id).orElseThrow(()->new IllegalArgumentException("site not found"));
     }
 }
