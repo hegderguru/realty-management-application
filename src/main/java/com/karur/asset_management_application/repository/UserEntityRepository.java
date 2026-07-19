@@ -1,7 +1,7 @@
 package com.karur.asset_management_application.repository;
 
 import com.karur.asset_management_application.entity.party.OrganisationUserEntity;
-import com.karur.asset_management_application.repository.inter.ISiteRealtyAssetEntityRepository;
+import com.karur.asset_management_application.repository.inter.ISiteEntityRepository;
 import com.karur.asset_management_application.repository.inter.IUserEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,7 +16,7 @@ public class UserEntityRepository {
     private IUserEntityRepository iUserEntityRepository;
 
     @Autowired
-    private ISiteRealtyAssetEntityRepository iSiteRealtyAssetEntityRepository;
+    private ISiteEntityRepository iSiteEntityRepository;
 
     public Optional<OrganisationUserEntity> fetchByUserEntityName(String username) {
         return iUserEntityRepository.findByUsername(username);
@@ -39,7 +39,7 @@ public class UserEntityRepository {
     }
 
     public Optional<OrganisationUserEntity> fetchUserEntityBySiteAssetRealtyBelongsToId(Long id) {
-        return iSiteRealtyAssetEntityRepository.findUserEntityByBelongsToId(id);
+        return iSiteEntityRepository.findUserEntityByBelongsToId(id);
     }
 
 }

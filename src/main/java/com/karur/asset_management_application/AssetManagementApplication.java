@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-public class RealtyManagementApplication {
+public class AssetManagementApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RealtyManagementApplication.class, args);
+		SpringApplication.run(AssetManagementApplication.class, args);
 	}
 
 }

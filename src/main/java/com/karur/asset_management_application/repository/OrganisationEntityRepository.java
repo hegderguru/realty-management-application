@@ -2,7 +2,7 @@ package com.karur.asset_management_application.repository;
 
 import com.karur.asset_management_application.entity.party.OrganisationEntity;
 import com.karur.asset_management_application.repository.inter.IOrganisationEntityRepository;
-import com.karur.asset_management_application.repository.inter.ISiteRealtyAssetEntityRepository;
+import com.karur.asset_management_application.repository.inter.ISiteEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -17,7 +17,7 @@ public class OrganisationEntityRepository {
     IOrganisationEntityRepository iOrganisationEntityRepository;
 
     @Autowired
-    ISiteRealtyAssetEntityRepository iSiteRealtyAssetEntityRepository;
+    ISiteEntityRepository iSiteEntityRepository;
 
     public Optional<OrganisationEntity> fetchOrganisationEntityById(Long id) {
         return iOrganisationEntityRepository.findById(id);
@@ -44,11 +44,11 @@ public class OrganisationEntityRepository {
     }
 
     public Optional<OrganisationEntity> fetchOrganisationBySiteAssetRealtyBelongsToId(Long id) {
-        return iSiteRealtyAssetEntityRepository.findOrganisationEntityByBelongsToId(id);
+        return iSiteEntityRepository.findOrganisationEntityByBelongsToId(id);
     }
 
     public Optional<OrganisationEntity> fetchByParentSiteRealtyAssetEntityId(Long id) {
-        return iSiteRealtyAssetEntityRepository.findOrganisationEntityByParentSiteRealtyAssetEntityId(id);
+        return iSiteEntityRepository.findOrganisationEntityByParentSiteEntityId(id);
     }
 
 }

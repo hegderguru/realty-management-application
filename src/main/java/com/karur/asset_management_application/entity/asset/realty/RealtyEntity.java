@@ -9,8 +9,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "realty_asset")
-public abstract class RealtyAssetEntity extends AssetEntity {
+@Table(name = "realty")
+public abstract class RealtyEntity extends AssetEntity {
 
     private Integer nELength;
     private Integer eSLength;
@@ -22,19 +22,19 @@ public abstract class RealtyAssetEntity extends AssetEntity {
     private AddressEntity addressEntity;
 
     @OneToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "n_realty_asset_id")
-    private RealtyAssetEntity nRealtyAssetEntity;
+    @JoinColumn(name = "n_realty_id")
+    private RealtyEntity nRealtyEntity;
 
     @OneToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "e_realty_asset_id")
-    private RealtyAssetEntity eRealtyAssetEntity;
+    @JoinColumn(name = "e_realty_id")
+    private RealtyEntity eRealtyEntity;
 
     @OneToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "s_realty_asset_id")
-    private RealtyAssetEntity sRealtyAssetEntity;
+    @JoinColumn(name = "s_realty_id")
+    private RealtyEntity sRealtyEntity;
 
     @OneToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "w_realty_asset_id")
-    private RealtyAssetEntity wRealtyAssetEntity;
+    @JoinColumn(name = "w_realty_id")
+    private RealtyEntity wRealtyEntity;
 
 }
