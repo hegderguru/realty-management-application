@@ -14,18 +14,25 @@ import org.springframework.stereotype.Component;
 public class EntityToReaderMapper {
 
     public AddressDetail buildAddressDetail(AddressEntity addressEntity) {
-       return EntityToAddressDetailMapper.buildAddressDetail(addressEntity);
+        return EntityToAddressDetailMapper.buildAddressDetail(addressEntity);
     }
 
     public OrganisationUserDetail buildUserDetail(OrganisationUserEntity organisationUserEntity) {
-        return EntityToOrganisationUserDetailMapper.buildOrganisationUserDetail(organisationUserEntity);
+        OrganisationUserDetail organisationUserDetail = EntityToOrganisationUserDetailMapper.buildOrganisationUserDetail(organisationUserEntity);
+        organisationUserDetail.setAddressDetail(buildAddressDetail(organisationUserEntity.getHomeAddressEntity()));
+        organisationUserDetail.setOrganisationDetail(buildOrganisationDetail(organisationUserEntity.getOrganisationEntity()));
+        return organisationUserDetail;
     }
 
     public SiteDetail buildSiteDetail(SiteEntity siteEntity) {
-        return EntityToSiteDetailMapper.buildSiteDetail(siteEntity);
+        SiteDetail siteDetail = EntityToSiteDetailMapper.buildSiteDetail(siteEntity);
+        siteDetail.setParentSiteDetail(EntityToSiteDetailMapper.buildSiteDetail(siteEntity.getParentSiteEntity()));
+        return siteDetail;
     }
 
     public OrganisationDetail buildOrganisationDetail(OrganisationEntity organisationEntity) {
-        return EntityToOrganisationDetailMapper.buildOrganisationDetail(organisationEntity);
+        OrganisationDetail organisationDetail = EntityToOrganisationDetailMapper.buildOrganisationDetail(organisationEntity);
+        organisationDetail.setParentOrganisationDetail(EntityToOrganisationDetailMapper.buildOrganisationDetail(organisationEntity.getParentOrganisation()));
+        return organisationDetail;
     }
 }
