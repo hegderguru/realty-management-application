@@ -1,9 +1,8 @@
 package com.karur.asset_management_application.entity.asset;
 
 import com.karur.asset_management_application.entity.party.Party;
+import com.karur.asset_management_application.model.price.Price;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,17 +29,4 @@ public abstract class AssetEntity {
 
     @Embedded
     private Price price;
-
-    @Embeddable
-    private static class Price {
-        private String priceMeasurementUnit;
-        @Embedded
-        private PricePerUnit pricePerUnit;
-
-        @Embeddable
-        private static class PricePerUnit {
-            private String currency;
-            private Double amount;
-        }
-    }
 }
