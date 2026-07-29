@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class UserDetail {
+public class OrganisationUserDetail {
     private String username;
     private String firstName;
     private String middleName;

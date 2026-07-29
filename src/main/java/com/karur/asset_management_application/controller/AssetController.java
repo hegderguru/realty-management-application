@@ -22,7 +22,7 @@ public class AssetController {
     public Mono<ResponseEntity<AssetResponse>> fetchOrgUserByName(@PathVariable Mono<String> usernameMono){
        return usernameMono.flatMap(username -> orgUserService.fetchUserDetailByUsername(username))
                .map(userDetail -> ResponseEntity.ok(AssetResponse.SuccessResponse.builder()
-                       .userDetail(userDetail).code(HttpStatus.OK).build()))
+                       .organisationUserDetail(userDetail).code(HttpStatus.OK).build()))
                .switchIfEmpty(Mono.just(ResponseEntity.badRequest().body(AssetResponse.FailureResponse.builder().build())));
     }
 

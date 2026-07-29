@@ -1,6 +1,6 @@
 package com.karur.asset_management_application.model.response;
 
-import com.karur.asset_management_application.model.read.UserDetail;
+import com.karur.asset_management_application.model.read.OrganisationUserDetail;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
@@ -10,23 +10,23 @@ import org.springframework.http.HttpStatus;
 public class AssetResponse {
     private HttpStatus code;
     private String message;
-    private UserDetail userDetail;
+    private OrganisationUserDetail organisationUserDetail;
 
-    public AssetResponse(HttpStatus code,String message,UserDetail userDetail){
+    public AssetResponse(HttpStatus code, String message, OrganisationUserDetail organisationUserDetail){
         this.code=code;
         this.message=message;
-        this.userDetail=userDetail;
+        this.organisationUserDetail = organisationUserDetail;
     }
 
     public static class SuccessResponse extends AssetResponse{
-        public SuccessResponse(HttpStatus code,String message,UserDetail userDetail){
-            super(code,message,userDetail);
+        public SuccessResponse(HttpStatus code, String message, OrganisationUserDetail organisationUserDetail){
+            super(code,message, organisationUserDetail);
         }
     }
 
     public static class FailureResponse extends AssetResponse{
-        public FailureResponse(HttpStatus code,String message,UserDetail userDetail){
-            super(code,message,userDetail);
+        public FailureResponse(HttpStatus code, String message, OrganisationUserDetail organisationUserDetail){
+            super(code,message, organisationUserDetail);
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.karur.asset_management_application.service;
 
-import com.karur.asset_management_application.mapper.EntityToReaderMapper;
+import com.karur.asset_management_application.mapper.entityToDetail.EntityToReaderMapper;
 import com.karur.asset_management_application.model.read.SiteDetail;
 import com.karur.asset_management_application.repository.SiteEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,11 +1,8 @@
-package com.karur.asset_management_application.mapper;
+package com.karur.asset_management_application.mapper.entityToRequet;
 
 import com.karur.asset_management_application.entity.asset.realty.SiteEntity;
 import com.karur.asset_management_application.entity.party.OrganisationEntity;
 import com.karur.asset_management_application.entity.party.OrganisationUserEntity;
-import com.karur.asset_management_application.model.read.OrganisationDetail;
-import com.karur.asset_management_application.model.read.SiteDetail;
-import com.karur.asset_management_application.model.read.UserDetail;
 import com.karur.asset_management_application.model.request.OrganisationRequest;
 import com.karur.asset_management_application.model.request.SiteRequest;
 import com.karur.asset_management_application.model.request.UserRequest;
