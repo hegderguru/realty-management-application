@@ -18,4 +18,12 @@ public class SiteDetail {
     private Integer wNLength;
 
     private SiteDetail parentSiteDetail;
+
+    private AddressDetail presentAddressDetail;
+
+    private OrganisationUserDetail belongsToOrganisationUserDetail;
+
+    private OrganisationDetail belongsToOrganisation;
+
+
 }
