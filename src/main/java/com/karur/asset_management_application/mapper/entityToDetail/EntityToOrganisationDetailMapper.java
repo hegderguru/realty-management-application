@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EntityToOrganisationDetailMapper {
 
-    public static OrganisationDetail buildOrganisationDetail(OrganisationEntity organisationEntity){
+    public static OrganisationDetail buildOrganisationDetail(OrganisationEntity organisationEntity) {
         return OrganisationDetail.builder()
                 .number(organisationEntity.getNumber())
                 .name(organisationEntity.getName())

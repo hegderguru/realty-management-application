@@ -2,6 +2,8 @@ package com.karur.asset_management_application.entity.asset;
 
 import com.karur.asset_management_application.entity.party.Party;
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

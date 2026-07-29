@@ -3,8 +3,10 @@ package com.karur.asset_management_application.entity.party;
 import com.karur.asset_management_application.entity.address.AddressEntity;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+
 
 @Getter
 @Setter

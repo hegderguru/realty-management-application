@@ -9,4 +9,5 @@ public class OrganisationDetail {
     private String number;
     private String name;
     private String description;
+    private OrganisationDetail parentOrganisationDetail;
 }

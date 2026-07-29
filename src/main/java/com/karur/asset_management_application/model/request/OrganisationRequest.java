@@ -9,4 +9,5 @@ public class OrganisationRequest {
     private String number;
     private String name;
     private String description;
+    private OrganisationRequest belongsTo;
 }
