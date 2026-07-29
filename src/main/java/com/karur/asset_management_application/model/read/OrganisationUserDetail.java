@@ -13,4 +13,7 @@ public class OrganisationUserDetail {
     private String lastName;
     private String email;
     private String phone;
+
+    private AddressDetail addressDetail;
+    private OrganisationDetail organisationDetail;
 }

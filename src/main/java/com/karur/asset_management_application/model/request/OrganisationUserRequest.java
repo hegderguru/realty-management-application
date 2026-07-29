@@ -1,6 +1,7 @@
 package com.karur.asset_management_application.model.request;
 
 
+import com.karur.asset_management_application.model.read.OrganisationDetail;
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,4 +14,7 @@ public class OrganisationUserRequest {
     private String lastName;
     private String email;
     private String phone;
+
+    private AddressRequest addressRequest;
+    private OrganisationDetail organisationDetail;
 }

@@ -15,4 +15,6 @@ public class SiteDetail {
     private Integer eSLength;
     private Integer sWLength;
     private Integer wNLength;
+
+    private SiteDetail parentSiteDetail;
 }

@@ -17,4 +17,6 @@ public class SiteRequest {
     private Integer eSLength;
     private Integer sWLength;
     private Integer wNLength;
+
+    private SiteRequest parentSiteRequest;
 }
