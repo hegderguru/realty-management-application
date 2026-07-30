@@ -1,5 +1,6 @@
 package com.karur.asset_management_application.entity.party;
 
+import com.karur.asset_management_application.entity.UserEntity;
 import com.karur.asset_management_application.entity.address.AddressEntity;
 import jakarta.persistence.*;
 import lombok.Builder;
@@ -11,19 +12,8 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "organisation_user")
-@DiscriminatorValue("ORG_USER")
-public class OrganisationUserEntity extends Party {
-
-    private String username;
-    private String firstName;
-    private String middleName;
-    private String lastName;
-    private String email;
-    private String phone;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
-    private AddressEntity homeAddressEntity;
+@DiscriminatorValue("ORGANISATION_USER")
+public class OrganisationUserEntity extends UserEntity {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "organisation_id")

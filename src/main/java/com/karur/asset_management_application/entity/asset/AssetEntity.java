@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,7 +25,7 @@ public abstract class AssetEntity {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "party_id")
-    private Party belongsTo;
+    private List<Party> belongsTo;
     private LocalDate registrationDate;
 
     @Embedded
